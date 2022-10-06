@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card card-body">
+                <form action="/update/{{appo_list.Pid}}" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="P_name" value="{{appo_list.P_name}}" placeholder="ชื่อผู้ป่วย">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="detail" value="{{appo_list.detail}}" placeholder="รายละเอียด">
+                    </div>
+                    <div>
+                    <form action="/action_page.php">
+                        <label for="nud"><b>ห้องนัด⠀⠀⠀</b></label>
+                        <select id="room" name="room">
+                          <option value="{{appo_list.room}}">⠀⠀⠀⠀⠀⠀⠀ห้องเดิม⠀⠀⠀⠀⠀⠀</option>
+                          <option value="ห้อง01">⠀⠀⠀⠀⠀⠀⠀ห้อง01⠀⠀⠀⠀⠀⠀</option>
+                          <option value="ห้อง02">⠀⠀⠀⠀⠀⠀⠀ห้อง02⠀⠀⠀⠀⠀</option>
+                          <option value="ห้อง03">⠀⠀⠀⠀⠀⠀⠀ห้อง03⠀⠀⠀⠀⠀</option>
+                          <option value="ห้อง04">⠀⠀⠀⠀⠀⠀⠀ห้อง04⠀⠀⠀⠀⠀</option>
+                        </select>
+                    </div>
+                    <div>
+                    <form action="/action_page.php">
+                        <label for="status"><b>สถานะ⠀⠀⠀</b></label>
+                        <select id="status" name="status">
+                          <option value="รอนัด">⠀⠀⠀⠀⠀⠀⠀รอนัด⠀⠀⠀⠀⠀</option>
+                          <option value="มาตามนัด">⠀⠀⠀⠀⠀⠀⠀มาตามนัด⠀⠀⠀⠀⠀</option>
+                          <option value="พลาดนัด">⠀⠀⠀⠀⠀⠀⠀พลาดนัด⠀⠀⠀⠀⠀</option>
+                          <option value="รอนัดใหม่">⠀⠀⠀⠀⠀⠀⠀รอนัดใหม่⠀⠀⠀⠀⠀</option>
+                        </select>
+                    </div>
+                    <div>
+                    <form action="/action_page.php">
+                        <label for="birthdaytime"><b>วัน-เวลานัด</b></label>
+                        <input type="datetime-local" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
